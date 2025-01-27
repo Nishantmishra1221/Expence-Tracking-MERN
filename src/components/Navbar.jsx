@@ -3,14 +3,17 @@ import styles from "../styles/Navbar.module.css";
 const Navbar = () => {
   const hamburger = useRef(null);
   const navbar = useRef(null);
+  const close = useRef(null);
   useEffect(() => {
     const handleToggle = () => {
-      navbar.current.classList.toggle("active");
+      navbar.current.classList.toggle(styles.active);
     };
     hamburger.current.addEventListener("click", handleToggle);
+    close.current.addEventListener("click", handleToggle);
 
     return () => {
       hamburger.current.removeEventListener("click", handleToggle);
+      close.current.removeEventListener("click", handleToggle);
     };
   }, []);
   return (
@@ -19,6 +22,11 @@ const Navbar = () => {
       <div
         ref={navbar}
         className={styles.navbar}>
+        <span
+          ref={close}
+          className={styles.close}>
+          X
+        </span>
         <h1>Expence Tracker</h1>
         <ul className={styles.navbarList}>
           <li>
@@ -42,6 +50,7 @@ const Navbar = () => {
           src="/menu.png"
           className={styles.hamburger_bar}
         />
+        <h2>Expence Tracker</h2>
       </div>
     </>
   );
