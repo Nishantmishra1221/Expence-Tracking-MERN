@@ -1,0 +1,30 @@
+.navbar{
+    background-color:#023e8a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:1.5rem 3rem;
+}
+
+.navbarList{
+    display: flex;
+    justify-content:space-around;
+    gap:1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #caf0f8
+}
+
+.navbar h1{
+    color:#00b4d8
+}
+
+@media(max-width:768px){
+    .navbar h1{
+        font-size:1.5rem;
+    }
+    .navbarList{
+        font-size:1rem;
+        gap: 0.5rem;
+    }
+}
