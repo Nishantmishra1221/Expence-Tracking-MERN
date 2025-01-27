@@ -3,11 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar.jsx";
 
 const App = () => {
-  return (
-    <div>
-      <Navbar />
-      </div>
-  );
+  return <Navbar />;
 };
 
 export default App;
