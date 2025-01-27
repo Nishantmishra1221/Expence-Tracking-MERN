@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 3rem;
+  font-family: "Inter", sans-serif;
 }
 
 .navbarList {
@@ -18,6 +19,9 @@
 .navbar h1 {
   color: #00b4d8;
 }
+.hamburger {
+  display: none;
+}
 
 @media (max-width: 768px) {
   .navbar h1 {
@@ -30,6 +34,18 @@
 }
 
 @media (max-width: 480px) {
+  .hamburger {
+    display: block;
+    background-color: #023e8a;
+    padding: 0.5rem;
+    cursor: pointer; /* Add a pointer cursor for better UX */
+  }
+
+  .hamburger_bar {
+    color: white;
+    width: 2rem;
+  }
+
   .navbar {
     width: 30vw;
     flex-direction: column;
@@ -45,16 +61,28 @@
     gap: 5rem;
     padding: 1rem;
     padding-top: 2rem;
+    display: flex; /* Ensure flex behavior */
+    position: fixed; /* Fix position for a sidebar */
+    top: 0;
+    left: 0;
+    transform: translateX(-100%); /* Initially hidden */
+    transition: transform 0.3s ease-in-out; /* Smooth slide */
   }
+
+  .navbar.active {
+    transform: translateX(0%); /* Slide in */
+  }
+
   .navbar h1 {
     text-align: center;
   }
+
   .navbarList {
+    display: flex; /* Apply flex behavior */
     flex-direction: column;
     width: 100%;
     align-items: center;
     font-size: 1rem;
     gap: 2rem;
   }
-
 }
