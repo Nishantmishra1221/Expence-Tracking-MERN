@@ -1,5 +1,10 @@
 .navbar {
-  background-color: #023e8a;
+  background: rgb(14, 8, 107);
+  background: linear-gradient(
+    90deg,
+    rgba(14, 8, 107, 1) 0%,
+    rgba(2, 134, 161, 1) 100%
+  );
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,7 +22,7 @@
 }
 
 .navbar h1 {
-  color: #00b4d8;
+  color: #ffffff;
 }
 .hamburger h2 {
   display: none;
@@ -98,5 +103,10 @@
     display: block;
     color: white;
     font-size: 2rem;
+  }
+}
+@media (max-width: 350px) {
+  .hamburger h2 {
+    font-size: 1rem;
   }
 }
