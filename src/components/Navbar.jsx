@@ -27,7 +27,7 @@ const Navbar = () => {
           className={styles.close}>
           X
         </span>
-        <h1>Expence Tracker</h1>
+        <h1>Exspent</h1>
         <ul className={styles.navbarList}>
           <li>
             <a href="/dashboard">Dashboard</a>
@@ -50,7 +50,7 @@ const Navbar = () => {
           src="/menu.png"
           className={styles.hamburger_bar}
         />
-        <h2>Expence Tracker</h2>
+        <h2>Exspent</h2>
       </div>
     </>
   );
