@@ -3,7 +3,12 @@ import styles from "../styles/Background.module.css";
 const LanderBackground = () => {
   return (
     <div className={styles.background}>
-      <div className={styles.lander}></div>
+      <div className={styles.lander}>
+        <h1>
+          Beware of little expenses;
+          <br /> a small leak will sink a great ship
+        </h1>
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320">

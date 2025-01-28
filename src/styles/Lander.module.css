@@ -19,7 +19,7 @@
 
 @media (max-width: 1000px) {
   .landerButton {
-    margin-top: min(400px,95vw);
+    margin-top: min(400px,120vw);
   }
 }
 

@@ -1,6 +1,13 @@
 .lander {
   background-color: #caf0f8;
   height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lander h1{
+    font-size: 3rem;
+    color: #023e8a;
 }
 .background {
   position: absolute;
@@ -14,10 +21,17 @@
   .lander {
     height: 70vh;
   }
+  .lander h1{
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
   .lander {
     height: 75vh;
+  }
+  .lander h1{
+    font-size: 1.5rem;
+    padding: 0 1rem;
   }
 }
