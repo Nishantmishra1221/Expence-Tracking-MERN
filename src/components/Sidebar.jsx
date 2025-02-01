@@ -9,9 +9,11 @@ const Sidebar = ({ children }) => {
           <ul>
             <li>Dashboard</li>
             <li>Expenses</li>
-            <li>Trips</li>
+            <li>Category Wise</li>
+            <li>Goals</li>
           </ul>
         </div>
+        <h3>Logout</h3>
       </div>
       <div className={styles.content}>{children}</div>
     </div>
