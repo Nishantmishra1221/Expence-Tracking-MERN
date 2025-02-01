@@ -13,21 +13,22 @@ body {
 
 .card {
     padding: 6rem;
-    border:solid;
+    border: solid;
     border-radius: 10px;
-    font-size:x-large;
+    font-size: x-large;
     background-color: #03045E;
 }
-.form{
+
+.form {
     margin: 1rem 0;
     padding: 0.5rem 0;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
     gap: 1rem;
     /* text-align: center; */
 }
 
-.form > input{
+.form>input {
     height: 1vw;
     align-items: center;
     padding: 1rem;
@@ -36,3 +37,20 @@ body {
     /* width: 120% */
 }
 
+.loginButton {
+    z-index: 1;
+    background-color: #0077B6;
+    padding: 1rem;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 1ms;
+}
+
+.loginButton:hover {
+    border-color:  #CAF0F8;
+    border: solid;
+    border-width: 0.01px;
+    /* display: none; */
+}
