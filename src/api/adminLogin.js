@@ -1,6 +1,10 @@
+//fix for using require in react
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
 const express = require('express');
 const mongoose = require('mongoose');
-const Admin = require('./models/Admin'); // Import the Admin model
+const Admin = require('../database/models/Admin'); // Import the Admin model
 const bcrypt = require('bcrypt');
 const app = express();
 
@@ -37,10 +41,4 @@ app.post('/api/admin/login', async (req, res) => {
         console.error('Error during login:', error);
         res.status(500).json({ message: 'Internal server error' });
     }
-});
-
-// Start the server
-const PORT = 5000;
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
 });
