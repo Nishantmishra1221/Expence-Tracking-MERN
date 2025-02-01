@@ -1,0 +1,20 @@
+.expenseCard {
+  border-bottom: 1px solid #0077b6;
+  padding: 1rem;
+}
+.expenseCard ul {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+.expenseCard ul li {
+    width: 10%;
+}
+.expenseCard ul li img{
+    width: 1rem;
+    margin-right: 1rem;
+}
+.zeroId{
+    font-size: 1.2rem;
+    font-family: "Montserrat", serif;
+}
