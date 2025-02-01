@@ -2,8 +2,8 @@ import React from 'react'
 import styles from '../styles/AdminLogin.module.css';
 
 function AdminLogin() {
-    const formData = new FormData(document.querySelector('form'));
-    console.log(Object.fromEntries(formData));
+    // const formData = new FormData(document.querySelector('form'));
+    // console.log(Object.fromEntries(formData));
     return (
         <div className={styles['container']}>
             <div className={styles.card}>
