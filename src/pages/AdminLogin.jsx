@@ -2,61 +2,60 @@ import React, { useState } from 'react';
 import styles from '../styles/AdminLogin.module.css';
 
 function AdminLogin() {
-    const [errors, setErrors] = useState({}); // State to store validation errors
+    const [errors, setErrors] = useState({});
 
     const validateForm = (data) => {
         const errors = {};
 
-        // Email validation
         if (!data.adminmail) {
             errors.adminmail = 'Email is required';
         } else if (!/\S+@\S+\.\S+/.test(data.adminmail)) {
             errors.adminmail = 'Email is invalid';
         }
 
-        // Password validation
         if (!data.password) {
             errors.password = 'Password is required';
-        } else if (data.password.length < 7) {
-            errors.password = 'Password must be at least 7 characters long';
+        } else if (data.password.length < 8) {
+            errors.password = 'Password must be at least 8 characters long';
         }
 
         return errors;
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault(); // Prevent the default form submission
+    const handleSubmit = async (event) => {
+        event.preventDefault();
 
-        // Capture form data
         const formData = new FormData(event.target);
         const data = Object.fromEntries(formData);
 
-        // Validate form data
         const validationErrors = validateForm(data);
         setErrors(validationErrors);
 
-        // If there are no errors, proceed with submission
         if (Object.keys(validationErrors).length === 0) {
-            console.log('Form data:', data);
+            try {
+                // Send a POST request to the login API
+                const response = await fetch('http://localhost:5000/api/admin/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
 
-            // Example: Send data to an API
-            // fetch('/api/admin/login', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify(data),
-            // })
-            // .then(response => response.json())
-            // .then(result => {
-            //     console.log('Success:', result);
-            // })
-            // .catch(error => {
-            //     console.error('Error:', error);
-            // });
+                const result = await response.json();
 
-            // Clear the form after successful submission
-            event.target.reset();
+                if (response.ok) {
+                    console.log('Login successful:', result);
+                    alert('Login successful!');
+                    event.target.reset(); // Clear the form
+                } else {
+                    console.error('Login failed:', result.message);
+                    alert(`Login failed: ${result.message}`);
+                }
+            } catch (error) {
+                console.error('Error during login:', error);
+                alert('An error occurred. Please try again.');
+            }
         }
     };
 
@@ -73,7 +72,7 @@ function AdminLogin() {
                         id="adminmail"
                         name="adminmail"
                         placeholder="Please enter your email"
-                        required
+                        className={errors.adminmail ? styles.invalid : ''}
                     />
                     {errors.adminmail && <p className={styles.error}>{errors.adminmail}</p>}
 
@@ -83,7 +82,7 @@ function AdminLogin() {
                         id="password"
                         name="password"
                         placeholder="Please enter your password"
-                        required
+                        className={errors.password ? styles.invalid : ''}
                     />
                     {errors.password && <p className={styles.error}>{errors.password}</p>}
 
