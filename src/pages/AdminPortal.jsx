@@ -17,7 +17,7 @@ function AdminPortal() {
           <Typography variant="h4" gutterBottom align="center" style={{ color: '#03045e', margin: '20px 0' }}>
             Admin Dashboard
           </Typography>
-          <Grid container spacing={3}>
+          <Grid container spacing={8}>
             <Grid item xs={12} md={3}>
               <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
             </Grid>
