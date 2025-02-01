@@ -4,7 +4,7 @@ const Sidebar = ({ children }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <h1>EXSPENT</h1>
+        <span>EXSPENT</span>
         <div className={styles.sidebar}>
           <ul>
             <li>Dashboard</li>
@@ -15,7 +15,7 @@ const Sidebar = ({ children }) => {
         </div>
         <h3>Logout</h3>
       </div>
-      <div className={styles.content}>{children}</div>
+      {children}
     </div>
   );
 };

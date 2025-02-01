@@ -1,3 +1,7 @@
+.container {
+  flex-grow: 1;
+  overflow: hidden;
+}
 .profilepic {
   width: 3rem;
   height: 3rem;
@@ -11,7 +15,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 3rem;
+  padding: 2.5rem;
 }
 .profileinfo {
   display: flex;
@@ -27,45 +31,57 @@
 .header h1 {
   font-family: "Montserrat", serif;
   font-size: 2.5rem;
-  color: #03045E;
+  color: #03045e;
 }
 .notification {
   width: 1.5rem;
   height: 1.5rem;
   margin-right: 2rem;
 }
-.balance{
-    font-family:"Poppins";
-    margin-left: 3rem;
-    margin-bottom: 1rem;
+.balance {
+  font-family: "Poppins";
+  margin-left: 3rem;
+  font-size: 2rem;
 }
 
-.graphs{
-    margin-top: 2rem;
-    display: flex;
-    justify-content: space-around;
+.graphs {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
 }
-.extra{
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 5rem;
-    height: 100%;
+.extra {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 3rem;
+  overflow: hidden;
+  margin-top: 1rem;
 }
-.extra1{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 50%;
+.extra1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 60%;
 }
-.goals{
-    width: 100%;
+.goals {
+  width: 80%;
+  margin-bottom: 1rem;
 }
-.goal{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
+.goal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 90%;
 }
-
-
-
+.recent {
+  width: 50%;
+}
+.container h2{
+  margin-bottom: 0.5rem;
+  font-family: "Montserrat", serif;
+}
+.recentUpdates {
+  margin-top: 1rem;
+  background-color: rgb(207, 242, 250);
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+}
