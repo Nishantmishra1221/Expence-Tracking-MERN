@@ -1,0 +1,9 @@
+.container{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    gap: 1rem;
+    border: 2px solid #0077B6;
+    border-radius: 2rem;
+    padding: 0.5rem;
+}
