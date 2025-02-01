@@ -11,21 +11,23 @@ function AdminPortal() {
 
   return (
     <>
-    <Navbar/>
-    <Container>
-      <Typography variant="h4" gutterBottom align="center" style={{ color: '#03045e', margin: '20px 0' }}>
-        Admin Dashboard
-      </Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={3}>
-          <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
-        </Grid>
-        <Grid item xs={12} md={9}>
-          {activeTab === 'analytics' ? <Analytics /> : <UserManagement />}
-        </Grid>
-      </Grid>
-    </Container>
-    </>
+      <Navbar />
+      <div style={{ marginBottom: "2rem" }}>
+        <Container style={{ margin: '2rem' }}>
+          <Typography variant="h4" gutterBottom align="center" style={{ color: '#03045e', margin: '20px 0' }}>
+            Admin Dashboard
+          </Typography>
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={3}>
+              <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+            </Grid>
+            <Grid item xs={12} md={9}>
+              {activeTab === 'analytics' ? <Analytics /> : <UserManagement />}
+            </Grid>
+          </Grid>
+        </Container>
+      </div>
+    </> 
   );
 }
 
