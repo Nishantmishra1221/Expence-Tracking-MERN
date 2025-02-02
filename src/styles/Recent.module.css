@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #0077B6;
+    align-items: center;
+}
+.info img{
+    width: 2rem;
+    padding: 0.5rem;
+}
+.info{
+    display: flex;
+    align-items: center;
+}
