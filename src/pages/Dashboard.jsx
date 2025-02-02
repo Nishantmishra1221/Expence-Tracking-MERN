@@ -3,6 +3,8 @@ import styles from "../styles/Dashboard.module.css";
 import Sidebar from "../components/Sidebar";
 import SmallGraph from "../components/SmallGraph";
 import DashboardGoal from "../components/DashboardGoal";
+import BalanceGraph from "../components/BalanceGraph";
+import Recent from "../components/Recent";
 
 const Dashboard = () => {
   const daysOfWeek = [
@@ -27,7 +29,6 @@ const Dashboard = () => {
   );
 
   return (
-    <Sidebar style={{ display: "flex" }}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h1>DASHBOARD</h1>
@@ -76,15 +77,20 @@ const Dashboard = () => {
             </div>
             <div className={styles.balancegraph}>
               <h2>Balance Graph</h2>
+              <BalanceGraph />
             </div>
           </div>
           <div className={styles.recent}>
             <h2>Recent Updates</h2>
-            <div></div>
+            <div className={styles.recentUpdates}>
+              <Recent/>
+              <Recent/>
+              <Recent/>
+              <Recent/>
+            </div>
           </div>
         </div>
       </div>
-    </Sidebar>
   );
 };
 

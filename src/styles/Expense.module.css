@@ -1,0 +1,52 @@
+.container {
+  flex-grow: 1;
+  overflow: hidden;
+}
+.header {
+  padding: 2.5rem;
+}
+.header h1 {
+  font-family: "Montserrat", serif;
+  font-size: 2.5rem;
+  color: #03045e;
+}
+.add_btn {
+  font-size: 2.5rem;
+}
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.filter_section {
+  display: flex;
+  gap: 2rem;
+}
+.filter_section input {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+.filter_section select {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+.filter_section option {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+.expenses {
+  margin-top: 3rem;
+  padding:1rem;
+}
+.headings {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1rem;
+  font-family: "Poppins", serif;
+}
+.headings h3 {
+  width: 10%;
+}

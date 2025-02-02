@@ -1,9 +1,8 @@
 .container{
     width: 25%;
-    border: 5px solid #0077B6;
-    background-color: white;
+    background-color: rgb(160, 227, 240);
     border-radius:2rem;
-    padding: 0.5rem;
+    padding: 1rem;
     font-family: "Montserrat", serif;
 }
 .container span{
@@ -11,4 +10,10 @@
 }
 .container{
     font-size: 1rem;
+}
+.finalGraph{
+    width: 100%;
+}
+.lastGraph{
+    width: 10%;
 }

@@ -4,18 +4,22 @@ const Sidebar = ({ children }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <h1>EXSPENT</h1>
+        <span>EXSPENT</span>
         <div className={styles.sidebar}>
           <ul>
-            <li>Dashboard</li>
-            <li>Expenses</li>
+            <li>
+              <a href="/loggedIn/dashboard">Dashboard</a>
+            </li>
+            <li>
+              <a href="/loggedIn/expenses">Expenses</a>
+            </li>
             <li>Category Wise</li>
             <li>Goals</li>
           </ul>
         </div>
         <h3>Logout</h3>
       </div>
-      <div className={styles.content}>{children}</div>
+      {children}
     </div>
   );
 };
