@@ -87,59 +87,57 @@ const Expense = () => {
     );
 
   return (
-    <Sidebar>
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <h1>EXPENSES</h1>
-        </div>
-        <div className={styles.filter}>
-          <span className={styles.add_btn}>+</span>
-          <div className={styles.filter_section}>
-            <input
-              type="text"
-              placeholder="Search..."
-              value={search}
-              onChange={handleSearch}
-            />
-            <select
-              name="category"
-              onChange={handleFilterChange}>
-              <option value="">All Categories</option>
-              <option value="Food">Food</option>
-              <option value="Travel">Travel</option>
-            </select>
-            <select
-              name="timePeriod"
-              onChange={handleFilterChange}>
-              <option value="">All Time Periods</option>
-              <option value="daily">Daily</option>
-              <option value="weekly">Weekly</option>
-              <option value="monthly">Monthly</option>
-            </select>
-            <select
-              name="paymentMethod"
-              onChange={handleFilterChange}>
-              <option value="">All Payment Methods</option>
-              <option value="Cash">Cash</option>
-              <option value="Credit Card">Credit Card</option>
-            </select>
-            <select onChange={handleSortChange}>
-              <option value="date">Sort by Date</option>
-              <option value="amount">Sort by Amount</option>
-            </select>
-          </div>
-        </div>
-        <div className={styles.expenses}>
-          <ExpenseCard data={headings} />
-          {filteredExpenses.map((expense) => (
-            <ExpenseCard
-              key={expense.id}
-              data={expense}
-            />
-          ))}
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <h1>EXPENSES</h1>
+      </div>
+      <div className={styles.filter}>
+        <span className={styles.add_btn}>+</span>
+        <div className={styles.filter_section}>
+          <input
+            type="text"
+            placeholder="Search..."
+            value={search}
+            onChange={handleSearch}
+          />
+          <select
+            name="category"
+            onChange={handleFilterChange}>
+            <option value="">All Categories</option>
+            <option value="Food">Food</option>
+            <option value="Travel">Travel</option>
+          </select>
+          <select
+            name="timePeriod"
+            onChange={handleFilterChange}>
+            <option value="">All Time Periods</option>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+          </select>
+          <select
+            name="paymentMethod"
+            onChange={handleFilterChange}>
+            <option value="">All Payment Methods</option>
+            <option value="Cash">Cash</option>
+            <option value="Credit Card">Credit Card</option>
+          </select>
+          <select onChange={handleSortChange}>
+            <option value="date">Sort by Date</option>
+            <option value="amount">Sort by Amount</option>
+          </select>
         </div>
       </div>
-    </Sidebar>
+      <div className={styles.expenses}>
+        <ExpenseCard data={headings} />
+        {filteredExpenses.map((expense) => (
+          <ExpenseCard
+            key={expense.id}
+            data={expense}
+          />
+        ))}
+      </div>
+    </div>
   );
 };
 

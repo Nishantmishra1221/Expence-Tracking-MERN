@@ -29,7 +29,6 @@ const Dashboard = () => {
   );
 
   return (
-    <Sidebar style={{ display: "flex", flexGrow: 1 }}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h1>DASHBOARD</h1>
@@ -92,7 +91,6 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-    </Sidebar>
   );
 };
 

@@ -7,8 +7,12 @@ const Sidebar = ({ children }) => {
         <span>EXSPENT</span>
         <div className={styles.sidebar}>
           <ul>
-            <li>Dashboard</li>
-            <li>Expenses</li>
+            <li>
+              <a href="/loggedIn/dashboard">Dashboard</a>
+            </li>
+            <li>
+              <a href="/loggedIn/expenses">Expenses</a>
+            </li>
             <li>Category Wise</li>
             <li>Goals</li>
           </ul>
