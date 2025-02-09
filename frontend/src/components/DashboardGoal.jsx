@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/Goals.module.css";
+
 const DashboardGoal = () => {
   return (
     <div className={styles.container}>

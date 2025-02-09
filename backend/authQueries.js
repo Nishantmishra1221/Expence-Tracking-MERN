@@ -77,9 +77,16 @@ const signIn = async (req, res) => {
             return res.status(500).json({ message: err });
           }
           if (isMatch) {
-            const sessionId = getUser(email);
+            const sessionId = uuidv4();
+            setUser(email, sessionId);
             return res
-              .cookie("sessionId", sessionId)
+              .cookie("sessionId", sessionId, {
+                path: "/",
+                secure: false,
+                httpOnly: true,
+                sameSite: "Lax",
+                maxAge: 7 * 24 * 60 * 60 * 1000,
+              })
               .status(200)
               .json({
                 message: `User signed in with email: ${email}`,

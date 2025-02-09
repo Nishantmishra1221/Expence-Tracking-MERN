@@ -18,7 +18,9 @@ const SignUp = () => {
       password: password.trim(),
     };
     try {
-      const response = await axios.post("http://localhost:5002/signup", data);
+      const response = await axios.post("http://localhost:5002/signup", data, {
+        withCredentials: true,
+      });
 
       if (response.status === 400) {
         alert(response.data.message);

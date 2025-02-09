@@ -1,6 +1,35 @@
 import React from "react";
 import styles from "../styles/Background.module.css";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 const LanderBackground = () => {
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+  useEffect(() => {
+    const fetchCookie = async () => {
+      try {
+        const cookie = await axios.get("http://localhost:5002/get-cookie", {
+          withCredentials: true,
+        });
+        if (cookie?.data?.sessionId) {
+          navigate("/dashboard", { state: cookie.data.email });
+        } else {
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error("Error fetching cookie:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchCookie();
+  }, []);
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <div className={styles.background}>
       <div className={styles.lander}>

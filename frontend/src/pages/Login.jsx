@@ -9,6 +9,7 @@ import axios from "axios";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
 
@@ -22,7 +23,10 @@ const Login = () => {
       };
       const response = await axios.get("http://localhost:5002/signin", {
         params: data,
+        withCredentials: true,
       });
+
+      console.log(response);
 
       if (!response) {
         alert(response.data.message);
@@ -38,6 +42,29 @@ const Login = () => {
       alert(error.response.data.message);
     }
   };
+  useEffect(() => {
+    const fetchCookie = async () => {
+      try {
+        const cookie = await axios.get("http://localhost:5002/get-cookie", {
+          withCredentials: true,
+        });
+        if (cookie?.data?.sessionId) {
+          navigate("/dashboard", { state: cookie.data.email });
+        } else {
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error("Error fetching cookie:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchCookie();
+  }, []);
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
 
   return (
     <>

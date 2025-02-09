@@ -1,7 +1,7 @@
 const userLoginMap = new Map();
 
 const setUser = (email, sessionId) => {
-  userLoginMap.set(email, sessionId);
+  userLoginMap.set(sessionId, email);
 };
 const getUser = (sessionId) => {
   return userLoginMap.get(sessionId);
