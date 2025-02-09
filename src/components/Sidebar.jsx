@@ -13,7 +13,6 @@ const Sidebar = ({ children }) => {
             <li>
               <a href="/loggedIn/expenses">Expenses</a>
             </li>
-            <li>Category Wise</li>
             <li>Goals</li>
           </ul>
         </div>

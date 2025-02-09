@@ -12,13 +12,13 @@ import {
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip);
 
 const BalanceGraph = () => {
-  const days = Array.from({ length: 31 }, (_, i) => i + 1);
+  const category = ["Food", "Travel", "Entertainment", "Others"];
   const monthlyData = Array.from({ length: 31 }, () =>
     Math.floor(Math.random() * 7000)
   );
 
   const data = {
-    labels: days,
+    labels: category,
     datasets: [
       {
         data: monthlyData,
@@ -41,9 +41,9 @@ const BalanceGraph = () => {
     },
     scales: {
       x: {
-       grid: {
-        display: false,
-       }
+        grid: {
+          display: false,
+        },
       },
       y: {
         display: false,
