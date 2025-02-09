@@ -1,5 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
+import cookieParser from "cookie-parser";
 import {
   getUsers,
   getUserByEmail,
@@ -8,11 +9,14 @@ import {
   deleteUser,
 } from "./queries.js";
 import { signUp, signIn } from "./authQueries.js";
+import cors from "cors";
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(cors());
 
 app.get("/", (request, response) => {
   response.json({ info: "Node.js, Express, and Postgres API" });
