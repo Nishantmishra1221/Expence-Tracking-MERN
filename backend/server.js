@@ -25,7 +25,7 @@ app.put("/expenses/:email", updateUser);
 app.delete("/expenses/", deleteUser);
 
 app.post("/signup", signUp);
-app.post("/signin", signIn);
+app.get("/signin", signIn);
 
 app.listen(5002, () => {
   console.log("Server started on port 5002");

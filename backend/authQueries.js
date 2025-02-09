@@ -22,7 +22,7 @@ const signUp = async (req, res) => {
   const hashedPassword = await bcrypt.hash(password, salt);
 
   pool.query(
-    "INSERT INTO auth (email,password) VALUES ($1,$2) RETURNING *",
+    "INSERT INTO users (email,password) VALUES ($1,$2) RETURNING *",
     [email, hashedPassword],
     (error, results) => {
       if (error) {
@@ -41,7 +41,7 @@ const signIn = async (req, res) => {
   }
 
   pool.query(
-    "SELECT * FROM auth WHERE email = $1",
+    "SELECT * FROM users WHERE email = $1",
     [email],
     (error, results) => {
       if (error) {
@@ -50,20 +50,19 @@ const signIn = async (req, res) => {
       if (results.rows.length === 0) {
         return res
           .status(400)
-          .json({ message: "Email doesnt exist", exists: false });
+          .json({ message: "Email doesn't exist", exists: false });
       }
+
       const { password: hashedPassword } = results.rows[0];
-      bcrypt.compare(password, hashedPassword, (err, res) => {
+      bcrypt.compare(password, hashedPassword, (err, isMatch) => {
         if (err) {
           return res.status(500).json({ message: err });
         }
-        if (res) {
-          return res
-            .status(200)
-            .json({
-              message: `User signed in with email: ${email}`,
-              exists: true,
-            });
+        if (isMatch) {
+          return res.status(200).json({
+            message: `User signed in with email: ${email}`,
+            exists: true,
+          });
         } else {
           return res.status(401).json({ message: "Invalid password" });
         }
