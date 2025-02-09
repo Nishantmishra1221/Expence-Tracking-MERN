@@ -32,7 +32,7 @@ const SignUp = () => {
       setEmail("");
       setPassword("");
       alert(response.data.message);
-      navigate("/dashboard", { state: data });
+      navigate("/dashboard", { state: data.email });
     } catch (error) {
       console.log(error);
       alert(error.response.data.message);
