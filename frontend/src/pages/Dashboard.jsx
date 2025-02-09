@@ -6,10 +6,14 @@ import DashboardGoal from "../components/DashboardGoal";
 import BalanceGraph from "../components/BalanceGraph";
 import Recent from "../components/Recent";
 import { useLocation } from "react-router-dom";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 const Dashboard = () => {
   const location = useLocation();
   const email = location.state;
+  const [details, setDetails] = useState(null);
+
   const daysOfWeek = [
     "Sunday",
     "Monday",
@@ -30,6 +34,24 @@ const Dashboard = () => {
   const monthlyExpenses = Array.from({ length: 31 }, () =>
     Math.floor(Math.random() * 7000)
   );
+
+  const fetchDetails = async () => {
+    try {
+      const response = await axios.get("http://localhost:5002/expenses", {
+        params: { email },
+        withCredentials: true,
+      });
+      setDetails(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchDetails();
+  }, []);
+
+  console.log(details);
 
   return (
     <div className={styles.container}>

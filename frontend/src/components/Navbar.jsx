@@ -41,7 +41,9 @@ const Navbar = () => {
           className={styles.close}>
           X
         </span>
-        <h1>Exspent</h1>
+        <a href="/" className={styles.logo}>
+          <h1>Exspent</h1>
+        </a>
         <ul className={styles.navbarList}>
           <li>
             <a href="/login">Login</a>
